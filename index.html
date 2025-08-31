@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      background: #0000ff; /* Спокойный бежевый фон */
+      background: #f5f5dc; /* Спокойный бежевый фон */
       color: #000;
       font-family: sans-serif;
       overflow: hidden; /* Убираем прокрутку страницы */
@@ -36,7 +36,7 @@
       <video id="v0" src="https://raw.githubusercontent.com/yat0mmy/weddinglizanikita2/main/videos/video1.mp4" muted playsinline></video>
     </section>
     <section class="video-card">
-      <video id="v1" src="https://raw.githubusercontent.com/yat0mmy/weddinglizanikita2/main/videos/video2.mp4.mp4" muted playsinline></video>
+      <video id="v1" src="https://raw.githubusercontent.com/yat0mmy/weddinglizanikita2/main/videos/video2.mp4" muted playsinline></video>
     </section>
     <section class="video-card">
       <video id="v2" src="https://raw.githubusercontent.com/yat0mmy/weddinglizanikita2/main/videos/video3.mp4" muted playsinline></video>
@@ -68,6 +68,7 @@
       video.addEventListener('ended', () => {
         video.pause();
         if (index + 1 < videos.length) {
+          // Переключаемся на следующее видео и прокручиваем страницу вниз
           videos[index + 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
           setTimeout(() => playSequentially(index + 1), 600);
         }
@@ -80,4 +81,3 @@
   </script>
 </body>
 </html>
-
